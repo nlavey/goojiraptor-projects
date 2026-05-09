@@ -276,3 +276,30 @@ class SmartAI(AI):
 
         # Step 5: fallback
         return choice(board.valid_moves)
+#@title Implementation of a tic-tac-toe game with SmartAI and MiniMax
+score_player1, score_player2, score_tie = 0, 0, 0
+for i in range(5):
+    board = Board()
+    player1 = MiniMax("Max", "X")
+    player2 = SmartAI("Alice", "O")
+    turn = True
+    while True:
+        board.show()
+        if turn:
+            player1.choose(board)
+            turn = False
+        else:
+            player2.choose(board)
+            turn = True
+        if board.isdone:
+            break
+    board.show()
+    if board.winner == player1.mark:
+        score_player1 += 1
+    elif board.winner == player2.mark:
+        score_player2 += 1
+    else:
+        score_tie += 1
+print(f'{player1.name} won {score_player1} games.')
+print(f'{player2.name} won {score_player2} games.')
+print(f'There are {score_tie} tied games.')
