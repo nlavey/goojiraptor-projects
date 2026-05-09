@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <h1 id="title">Community College Survey Form</h1>
+    <p id="description">Thank you for taking the time to improve our platform</p>
+    <form id="survey-form">
+      <label id="name-label">Name</label>
+      <input id="name" type="text" required placeholder="Enter your name"><br>
+      <label id="email-label">Email</label>
+      <input id="email" type="email" required placeholder="Enter your email"><br>
+      <label id="number-label">Age (optional)</label>
+      <input id="number" type="number" min=2 max=90 placeholder="Age"><br>
+      <p>What is your current grade level?</p>
+      <select id="dropdown">
+        <option>Freshman</option>
+        <option>Sophomore</option>
+        <option>Junior</option>
+        <option>Senior</option>
+      </select><br>
+      <p>Are you a transfer student?</p>
+      <input type="radio" id="yes" name="transfer" value="Yes">
+      <label for="yes">Yes</label>
+      <input type="radio" id="no" name="transfer" value="No">
+      <label for="no">No</label><br>
+      <p>What UC schools did you apply to?</p>
+      <label>
+        <input type="checkbox" value="merced">UC Merced
+      </label>
+      <label>
+        <input type="checkbox" value="riverside">UC Riverside
+      </label>
+      <label>
+        <input type="checkbox" value="santa cruz">UC Santa Cruz
+      </label>
+      <label>
+        <input type="checkbox" value="santa barbara">UC Santa Barbara
+      </label>
+      <label>
+        <input type="checkbox" value="san diego">UC San Diego
+      </label>
+      <label>
+        <input type="checkbox" value="berkeley">UC Berkeley
+      </label>
+      <label>
+        <input type="checkbox" value="LA">UCLA
+      </label>
+      <label>
+        <input type="checkbox" value="None">None
+      </label><br>
+      <p>If you did apply to a UC school, why did you choose to apply there?</p>
+      <textarea></textarea><br>
+      <p>If you didn't apply to any UCs, are you planning on transferring somewhere else or are you staying at this community college?</p>
+      <textarea></textarea><br>
+      <button id="submit">Submit</button>
+    </form>
+  </body>
+</html>
