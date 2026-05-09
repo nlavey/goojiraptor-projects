@@ -276,6 +276,7 @@ class SmartAI(AI):
 
         # Step 5: fallback
         return choice(board.valid_moves)
+        
 #@title Implementation of a tic-tac-toe game with SmartAI and MiniMax
 score_player1, score_player2, score_tie = 0, 0, 0
 for i in range(5):
