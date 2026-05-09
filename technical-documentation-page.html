@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Technical Documentation Page</title>
+    <link href="technical-documentation-page.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Source+Code+Pro&display=swap" rel="stylesheet"/>
+  </head>
+
+  <body>
+    <header id="top-header">
+  <h1>Data Structures Documentation</h1>
+</header>
+    <main id="main-doc">
+      <nav id="navbar">
+        <header>Data Structures</header>
+        <ul>
+          <li><a href="#intro_to_data_structures" class="nav-link">Intro To Data Structures</a></li>
+          <li><a href="#arrays" class="nav-link">Arrays</a></li>
+          <li><a href="#linked_lists" class="nav-link">Linked Lists</a></li>
+          <li><a href="#stacks_and_queues" class="nav-link">Stacks and Queues</a></li>
+          <li><a href="#trees" class="nav-link">Trees</a></li>
+          <li><a href="#graphs" class="nav-link">Graphs</a></li>
+          <li><a href="#hash_tables" class="nav-link">Hash Tables</a></li>
+        </ul>
+      </nav>
+      <section class="main-section" id="intro_to_data_structures">
+        <header>Intro To Data Structures</header>
+        <p>
+          Data structures are specialized ways of organizing and storing data so that it can be accessed, modified, and managed efficiently. Instead of treating data as a simple collection of values, data structures provide a framework that defines how those values relate to each other and how operations—such as searching, inserting, or deleting—are performed. Choosing the right data structure can significantly impact the performance and scalability of a program.
+        </p>
+        <p>
+          In computer science, data structures serve as the foundation for building algorithms and solving complex problems. Different structures are optimized for different tasks: arrays allow fast indexing, linked lists enable flexible memory usage, and trees and graphs help represent hierarchical or networked relationships. By understanding data structures, developers can write more efficient code, reduce computational costs, and design systems that handle large amounts of data effectively.
+        </p>
+        <p><b>Why Data Structures Matter</b></p>
+        <ul>
+          <li>Improve efficiency of algorithms</li>
+          <li>Organize data for better readability and maintainability</li>
+          <li>Enable faster data access and modification</li>
+          <li>Support complex problem-solving (e.g., searching, sorting, networking)</li>
+          <li>Form the backbone of software systems and applications</li>
+        </ul>
+      </section>
+      <section class="main-section" id="arrays">
+        <header>Arrays</header>
+        <p>
+          Arrays are one of the most fundamental data structures in computer science. They store elements in contiguous memory locations, allowing for efficient indexing using an integer position. Because of this layout, accessing an element by index is extremely fast—constant time, or O(1). Arrays are widely used when you need predictable performance and fixed-size collections.
+        </p>
+        <p>
+          However, arrays come with tradeoffs. Their size is typically fixed, meaning resizing requires allocating new memory and copying elements over. Insertions and deletions in the middle of an array can be costly, as elements must be shifted. Despite these limitations, arrays serve as the backbone for many higher-level data structures.
+        </p>
+        <p><b>Key Characteristics</b></p>
+        <ul>
+          <li>Key-value storage</li>
+          <li>Average O(1) operations</li>
+          <li>Uses hash functions</li>
+          <li>Collision handling required</li>
+          <li>Backbone of dictionaries/maps</li>
+        </ul>
+        <p><b>Example: Basic array usage in Python (list behaves like dynamic array)</b></p>
+        <pre><code>
+        arr = [10, 20, 30, 40, 50]
+
+        # Access
+        print(arr[2])  # 30
+
+        # Update
+        arr[1] = 25
+
+        # Insert (O(n))
+        arr.insert(2, 15)
+
+        # Delete (O(n))
+        arr.pop(3)
+
+        print(arr)
+        </code></pre>
+      </section>
+      <section class="main-section" id="linked_lists">
+        <header>Linked Lists</header>
+        <p>
+          A linked list is a linear data structure where elements (nodes) are connected via pointers rather than stored contiguously. Each node contains a value and a reference to the next node in the sequence. This design allows for efficient insertions and deletions without shifting elements.
+        </p>
+        <p>
+          Unlike arrays, linked lists do not support fast random access. Traversing to a specific element requires iterating through the list, making access O(n). However, their flexibility in dynamic memory allocation makes them useful for applications where frequent modifications are required.
+        </p>
+        <p><b>Key Characteristics</b></p>
+        <ul>
+          <li>Dynamic size</li>
+          <li>Efficient insertion and deletion (O(1) with pointer)</li>
+          <li>No random access (O(n) traversal)</li>
+          <li>Uses extra memory for pointers</li>
+          <li>Can be singly or doubly linked</li>
+        </ul>
+        <p><b>Example: Singly Linked List</b></p>
+        <pre><code>
+          class Node:
+          def __init__(self, data):
+              self.data = data
+              self.next = None
+
+          # Create nodes
+          head = Node(10)
+          second = Node(20)
+          third = Node(30)
+
+          # Link nodes
+          head.next = second
+          second.next = third
+
+          # Traverse
+          current = head
+          while current:
+              print(current.data)
+              current = current.next
+        </code></pre>
+      </section>
+      <section class="main-section" id="stacks_and_queues">
+        <header>Stacks and Queues</header>
+        <p>
+          Stacks and queues are abstract data types that define specific ordering principles for element access. A stack follows the Last In, First Out (LIFO) principle, meaning the last element added is the first to be removed. Common applications include function call stacks and undo operations.
+        </p>
+        <p>
+          Queues follow the First In, First Out (FIFO) principle, where elements are processed in the order they are added. They are commonly used in scheduling systems, buffering, and breadth-first search algorithms. Both structures can be implemented using arrays or linked lists.
+        </p>
+        <p><b>Key Characteristics</b></p>
+        <ul>
+          <li>Stack: LIFO ordering</li>
+          <li>Queue: FIFO ordering</li>
+          <li>O(1) insertion and removal</li>
+          <li>Used in recursion, scheduling, and traversal</li>
+          <li>Can be implemented with multiple underlying structures</li>
+        </ul>
+        <p><b>Stack example</b></p>
+        <pre><code>
+          stack = []
+
+          stack.append(10)
+          stack.append(20)
+          stack.append(30)
+
+          print(stack.pop())  # 30
+        </code></pre>
+        <p><b>Queue example</b></p>
+        <pre><code>
+          from collections import deque
+
+          queue = deque()
+
+          queue.append(10)
+          queue.append(20)
+          queue.append(30)
+
+          print(queue.popleft())  # 10
+        </code></pre>
+      </section>
+      <section class="main-section" id="trees">
+        <header>Trees</header>
+        <p>
+          Trees are hierarchical data structures composed of nodes connected by edges. The top node is called the root, and each node may have child nodes. Trees are commonly used to represent hierarchical relationships, such as file systems or organizational structures.
+        </p>
+        <p>
+          A special type of tree, the binary tree, limits each node to at most two children. Variants like binary search trees (BSTs) maintain ordering properties that enable efficient searching, insertion, and deletion operations—typically O(log n) in balanced cases.
+        </p>
+        <p><b>Key Characteristics</b></p>
+        <ul>
+          <li>Hierarchical structure</li>
+          <li>Root, parent, and child relationships</li>
+          <li>Traversal methods (inorder, preorder, postorder)</li>
+          <li>Balanced vs unbalanced trees</li>
+          <li>Used in databases, file systems, and search algorithms</li>
+        </ul>
+        <p><b>Example: Binary Tree Node and traversal</b></p>
+        <pre><code>
+          class TreeNode:
+          def __init__(self, value):
+              self.value = value
+              self.left = None
+              self.right = None
+
+          # Create tree
+          root = TreeNode(10)
+          root.left = TreeNode(5)
+          root.right = TreeNode(15)
+
+          # Inorder traversal
+          def inorder(node):
+              if node:
+                  inorder(node.left)
+                  print(node.value)
+                  inorder(node.right)
+
+          inorder(root)
+        </code></pre>
+      </section>
+      <section class="main-section" id="graphs">
+        <header>Graphs</header>
+        <p>
+          Graphs consist of a set of nodes (vertices) connected by edges. They are used to model relationships between entities, such as social networks, maps, and recommendation systems. Graphs can be directed or undirected, weighted or unweighted.
+        </p>
+        <p>
+          Traversal algorithms like Depth-First Search (DFS) and Breadth-First Search (BFS) are essential for exploring graphs. Graphs can be represented using adjacency lists or adjacency matrices, each with different performance tradeoffs depending on the use case.
+        </p>
+        <p><b>Key Characteristics</b></p>
+        <ul>
+          <li>Nodes (vertices) and edges</li>
+          <li>Directed or undirected</li>
+          <li>Weighted or unweighted</li>
+          <li>Traversal algorithms (DFS, BFS)</li>
+          <li>Represented via adjacency list or matrix</li>
+        </ul>
+        <p><b>Example: Graph using adjacency list</b></p>
+        <pre><code>
+          graph = {
+            'A': ['B', 'C'],
+            'B': ['D'],
+            'C': ['D'],
+            'D': []
+          }
+
+          # DFS traversal
+          def dfs(node, visited=set()):
+              if node not in visited:
+                  print(node)
+                  visited.add(node)
+                  for neighbor in graph[node]:
+                      dfs(neighbor, visited)
+
+          dfs('A')
+        </code></pre>
+      </section>
+      <section class="main-section" id="hash_tables">
+        <header>Hash Tables</header>
+        <p>
+          Hash tables store key-value pairs and use a hash function to compute an index where the value is stored. This allows for extremely fast average-case operations O(1) for insertion, deletion, and lookup.
+        </p>
+        <p>
+          Collisions occur when multiple keys map to the same index. These are handled using techniques like chaining (linked lists) or open addressing. Hash tables are widely used in dictionaries, caches, and database indexing.
+        </p>
+        <p><b>Key Characteristics</b></p>
+        <ul>
+          <li>Key-value storage</li>
+          <li>Average O(1) operations</li>
+          <li>Uses hash functions</li>
+          <li>Collision handling required</li>
+          <li>Backbone of dictionaries/maps</li>
+        </ul>
+        <p><b>Example: Hash table using Python dictionary</b></p>
+        <pre><code>
+          hash_table = {}
+
+          # Insert
+          hash_table["apple"] = 5
+          hash_table["banana"] = 3
+
+          # Access
+          print(hash_table["apple"])  # 5
+
+          # Delete
+          del hash_table["banana"]
+
+          print(hash_table)
+        </code></pre>
+      </section>
+    </main>
+    <footer id="footer">
+  <p>© 2026 Data Structures Guide | Built by Goojiraptor</p>
+</footer>
+  </body>
+</html>
